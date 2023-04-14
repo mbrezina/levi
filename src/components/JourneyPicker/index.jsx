@@ -20,6 +20,8 @@ export const JourneyPicker = ({onJourneyChange}) => {
         console.log(toCity);
         console.log(date);
 
+        console.log(`https://apps.kodim.cz/daweb/leviexpress/api/journey?fromCity=${fromCity}&toCity=${toCity}&date=${date}`);
+
         fetch(`https://apps.kodim.cz/daweb/leviexpress/api/journey?fromCity=${fromCity}&toCity=${toCity}&date=${date}`)
             .then((response) => response.json())
             .then((data) => onJourneyChange(data.results))
